@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container principal */
+        .profile-container, .manage-account-section {
+            width: 100%;
+            max-width: 400px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-header h2 {
+            font-size: 2em;
+            color: #00bcd4;
+            margin-bottom: 5px;
+        }
+
+        .profile-info {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .profile-info p {
+            margin: 10px 0;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .profile-info span {
+            font-weight: bold;
+            color: #555;
+        }
+
+        /* Botão de Gerenciar Conta */
+        .manage-account-button {
+            width: 100%;
+            padding: 12px;
+            font-size: 1em;
+            color: white;
+            background-color: #00bcd4;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-align: center;
+        }
+
+        .manage-account-button:hover {
+            background-color: #007c91;
+        }
+
+        /* Seção Gerenciar Conta */
+        .manage-account-section {
+            display: none; /* Ocultado inicialmente */
+        }
+
+        .back-button {
+            font-size: 1.2em;
+            color: #007c91;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+
+        /* Estilo dos grupos de formulário */
+        .form-group {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            font-size: 1em;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            background-color: #ffffff;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #00bcd4;
+            box-shadow: 0 0 5px rgba(0, 188, 212, 0.3);
+        }
+
+        /* Botão de Atualizar */
+        .update-button {
+            width: 100%;
+            padding: 12px;
+            font-size: 1em;
+            color: white;
+            background-color: #00bcd4;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .update-button:hover {
+            background-color: #007c91;
+        }
+    </style>
+    <script>
+        function showManageAccount() {
+            document.querySelector('.profile-container').style.display = 'none';
+            document.querySelector('.manage-account-section').style.display = 'block';
+        }
+
+        function goBack() {
+            document.querySelector('.profile-container').style.display = 'flex';
+            document.querySelector('.manage-account-section').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <!-- Tela de Perfil -->
+    <div class="profile-container">
+        <div class="profile-header">
+            <h2>Perfil</h2>
+        </div>
+        <div class="profile-info">
+            <p><span>Nome Completo:</span> João Silva</p>
+            <p><span>Data de Nascimento:</span> 01/01/1990</p>
+            <p><span>E-mail:</span> joao.silva@email.com</p>
+            <p><span>Nome de Usuário:</span> joaosilva</p>
+        </div>
+        <button class="manage-account-button" onclick="showManageAccount()">Gerenciar Conta</button>
+    </div>
+
+    <!-- Seção de Gerenciar Conta -->
+    <div class="manage-account-section">
+        <span class="back-button" onclick="goBack()">&#8592; Voltar</span>
+        <form>
+            <div class="form-group">
+                <label for="full-name">Nome Completo</label>
+                <input type="text" id="full-name" name="full-name" placeholder="NOME" required>
+            </div>
+            <div class="form-group">
+                <label for="birthdate">DATA DE NASCIMENTO</label>
+                <input type="date" id="birthdate" name="birthdate" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="EMAIL" required>
+            </div>
+            <div class="form-group">
+                <label for="username">Nome de Usuário</label>
+                <input type="text" id="username" name="username" placeholder="NOME DE USUÁRIO" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" placeholder="ATUALIZAR SENHA">
+            </div>
+            <button type="submit" class="update-button">Atualizar Dados</button>
+        </form>
+    </div>
+</body>
+</html>

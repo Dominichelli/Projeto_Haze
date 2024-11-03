@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagens</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container principal */
+        .app-container {
+            width: 100%;
+            max-width: 500px;
+            height: 90vh;
+            background-color: #e0f7fa;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Cabeçalho */
+        .header {
+            background-color: #00bcd4;
+            color: white;
+            padding: 15px;
+            font-size: 1.5em;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Botão de perfil no canto superior direito */
+        .profile-button {
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: white;
+            border: 2px solid #00bcd4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+
+        .profile-button i {
+            font-size: 1.2em;
+            color: #00bcd4;
+            transition: color 0.2s;
+        }
+
+        .profile-button:hover {
+            background-color: #00bcd4;
+            border-color: #007c91;
+        }
+
+        .profile-button:hover i {
+            color: white;
+        }
+
+        /* Lista de slots de mensagens */
+        .message-list {
+            list-style: none;
+            padding: 10px;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        /* Slot de mensagem */
+        .message-slot {
+            background-color: white;
+            border-radius: 8px;
+            margin: 10px 0;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Ícones */
+        .icons {
+            display: flex;
+            gap: 15px;
+            color: #00bcd4;
+        }
+
+        .icons i {
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .icons i:hover {
+            color: #007c91;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div class="header">
+            Mensagens
+            <!-- Botão de Perfil Redondo -->
+            <button class="profile-button">
+                <i>&#128100;</i> <!-- Ícone de usuário -->
+            </button>
+        </div>
+        <ul class="message-list">
+            <!-- Slot de Mensagem 1 -->
+            <li class="message-slot">
+                <div class="icons">
+                    <i>&#9825;</i> <!-- Ícone de coração -->
+                    <i>&#9654;</i> <!-- Ícone de enviar -->
+                    <i>&#9711;</i> <!-- Ícone de opções -->
+                </div>
+            </li>
+            <!-- Slot de Mensagem 2 -->
+            <li class="message-slot">
+                <div class="icons">
+                    <i>&#9825;</i>
+                    <i>&#9654;</i>
+                    <i>&#9711;</i>
+                </div>
+            </li>
+            <!-- Slot de Mensagem 3 -->
+            <li class="message-slot">
+                <div class="icons">
+                    <i>&#9825;</i>
+                    <i>&#9654;</i>
+                    <i>&#9711;</i>
+                </div>
+            </li>
+            <!-- Slot de Mensagem 4 -->
+            <li class="message-slot">
+                <div class="icons">
+                    <i>&#9825;</i>
+                    <i>&#9654;</i>
+                    <i>&#9711;</i>
+                </div>
+            </li>
+            <!-- Slot de Mensagem 5 -->
+            <li class="message-slot">
+                <div class="icons">
+                    <i>&#9825;</i>
+                    <i>&#9654;</i>
+                    <i>&#9711;</i>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
